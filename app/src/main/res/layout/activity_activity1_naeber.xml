@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity1Naeber"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.3"
+        android:orientation="horizontal"
+        android:background="@color/color_A1N_1"
+        >
+
+        <ImageView
+            android:id="@+id/activity2_imeg_v"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.9"
+            tools:src="@drawable/ic_launcher_background"
+            android:scaleType="fitXY"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/activity2_Text_FN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                tools:text="first_name"
+                android:layout_gravity="center"
+                android:layout_marginTop="55dp"/>
+
+            <TextView
+                android:id="@+id/activity2_Text_LasN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            tools:text="last_name"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginTop="18dp"/>
+
+            <TextView
+                android:id="@+id/activity2_Text_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                tools:text="age"
+                android:layout_gravity="center"
+                android:layout_marginTop="18dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/activity2_button_add"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="add to feavorit"/>
+
+                <Button
+                    android:id="@+id/activity2_button_remov"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="remove from feavorit"/>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.2"
+        android:orientation="vertical"
+        android:background="@color/color_A1N_2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.6"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="rating: "
+                android:textStyle="bold"
+                android:textSize="30sp"
+                />
+            <TextView
+                android:id="@+id/activity2_text_Rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="30sp"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.7"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/activity2_add_Rating"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="1dp"
+                android:background="@android:color/darker_gray"
+                android:src="@drawable/images_like"
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="40dp"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/activity2_lass_Rating"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="1dp"
+                android:background="@android:color/darker_gray"
+                android:src="@drawable/unlike"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="40dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
