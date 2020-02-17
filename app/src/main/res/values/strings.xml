@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">my nabers</string>
+    <string name="app_name">VOLT</string>
+    <string name="AM_Buton_text">Summary</string>
+    <string name="activ_1naber_fn">first_name</string>
+    <string name="activ_1naber_ln">last_name</string>
+    <string name="activ_1naber_age">age</string>
+    <string name="activ_1naber_boton_add">add to feavorit</string>
+    <string name="activ_1naber_boton_remov">remove from feavorit</string>
+    <string name="activ_1naber_ring">rating:</string>
+    <string name="samery_tv_t_favorit">Favorites</string>
+    <string name="samery_tv_t_ring">Rating</string>
+    <string name="samery_tv_t_you_mast">You must vote</string>
 </resources>

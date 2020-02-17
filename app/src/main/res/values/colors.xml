@@ -5,4 +5,9 @@
     <color name="colorAccent">#B2B5B6</color>
     <color name="color_A1N_1">#C1E2EC</color>
     <color name="color_A1N_2">#CBCFD1</color>
+    <color name="color_Sal_favorit">#94B2C9</color>
+    <color name="color_Sal_rang">#69B5DA</color>
+    <color name="color_volt">#2DA5E2</color>
+    <color name="color_volt_text">#DB3D87</color>
+    <color name="button_Dezin_text_color">#1B1B20</color>
 </resources>

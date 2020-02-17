@@ -11,7 +11,7 @@ import java.util.List;
 @Dao
 public interface daoNaber {
 
-    @Query("SELECT * FROM neighbor ORDER BY rating ASC ")
+    @Query("SELECT * FROM neighbor ORDER BY rating DESC ")
     List<neighbor> getAll();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

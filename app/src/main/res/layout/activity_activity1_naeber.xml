@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="25dp"
                 android:textStyle="bold"
-                tools:text="first_name"
+                tools:text="@string/activ_1naber_fn"
                 android:layout_gravity="center"
                 android:layout_marginTop="55dp"/>
 
@@ -45,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="25dp"
-            tools:text="last_name"
+            tools:text="@string/activ_1naber_ln"
             android:textStyle="bold"
             android:layout_gravity="center"
             android:layout_marginTop="18dp"/>
@@ -55,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                tools:text="age"
+                tools:text="@string/activ_1naber_age"
                 android:layout_gravity="center"
                 android:layout_marginTop="18dp"/>
             <RelativeLayout
@@ -64,17 +64,24 @@
 
                 <Button
                     android:id="@+id/activity2_button_add"
-                    android:layout_width="100dp"
+                    android:layout_width="@dimen/button_Dezin_width"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/logout_button"
                     android:layout_centerInParent="true"
-                    android:text="add to feavorit"/>
+                    android:text="@string/activ_1naber_boton_add"
+                    android:textColor="@color/button_Dezin_text_color"
+                    android:textSize="@dimen/button_Dezin_text_siz"/>
 
                 <Button
                     android:id="@+id/activity2_button_remov"
-                    android:layout_width="100dp"
+                    android:layout_width="@dimen/button_Dezin_width"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/logout_button"
                     android:layout_centerInParent="true"
-                    android:text="remove from feavorit"/>
+                    android:text="@string/activ_1naber_boton_remov"
+                    android:textColor="@color/button_Dezin_text_color"
+                    android:textSize="@dimen/button_Dezin_text_siz"/>
+
             </RelativeLayout>
 
 
@@ -99,7 +106,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="rating: "
+                android:text="@string/activ_1naber_ring"
                 android:textStyle="bold"
                 android:textSize="30sp"
                 />

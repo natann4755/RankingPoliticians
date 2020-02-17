@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Summary"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:background="@color/color_Sal_favorit"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:text="@string/samery_tv_t_favorit"
+            android:textSize="@dimen/samery_tv_favorit"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+        <TextView
+            android:id="@+id/SAMERY_Favorites"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="@dimen/samery_tv_favorit"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:background="@color/color_Sal_rang">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:gravity="center"
+            android:text="@string/samery_tv_t_ring"
+            android:textSize="@dimen/samery_tv_rating"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/SAMERY_Rating_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="@dimen/samery_tv_rating"
+            android:textStyle="bold"
+           />
+        <TextView
+            android:id="@+id/SAMERY_Rating"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7"
+            android:gravity="center"
+            android:textSize="@dimen/samery_tv_rating"
+            android:textStyle="bold"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
+        android:orientation="vertical"
+        android:background="@color/color_volt">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/samery_tv_t_you_mast"
+            android:textSize="35sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/SAMERY_vote"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="45sp"
+            android:textStyle="bold"
+            android:textColor="@color/color_volt_text"
+           />
+    </LinearLayout>
+
+</LinearLayout>
