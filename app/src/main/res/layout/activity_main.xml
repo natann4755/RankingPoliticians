@@ -7,16 +7,36 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <Button
-        android:layout_marginTop="10dp"
-        android:id="@+id/AM_Buton_Summary"
-        android:layout_width="@dimen/button_Dezin_width"
-        android:layout_height="@dimen/button_Dezin_height"
-        android:background="@drawable/logout_button"
-        android:layout_gravity="center"
-        android:text="@string/AM_Buton_text"
-        android:textColor="@color/button_Dezin_text_color"
-        android:textSize="@dimen/button_Dezin_text_siz"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+        <Button
+
+            android:id="@+id/AM_Buton_Summary"
+            android:layout_width="@dimen/button_Dezin_width"
+            android:layout_height="@dimen/button_Dezin_height"
+            android:background="@drawable/logout_button"
+            android:text="@string/AM_Buton_text"
+            android:textColor="@color/button_Dezin_text_color"
+            android:textSize="@dimen/button_Dezin_text_siz"/>
+
+        <Button
+
+            android:id="@+id/AM_Buton_Delete"
+            android:layout_width="@dimen/button_Dezin_width"
+            android:layout_height="@dimen/button_Dezin_height"
+            android:background="@drawable/logout_button"
+            android:text="@string/AM_Buton_delet_text"
+            android:textColor="@color/button_Dezin_text_color"
+            android:textSize="@dimen/button_Dezin_text_siz"
+           />
+
+    </LinearLayout>
+
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/AM_vP"

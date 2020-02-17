@@ -18,17 +18,18 @@ public class MainActivity extends AppCompatActivity {
 
     private ViewPager myViewPager;
     private Button summary;
+    private Button delete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        buttonSummary();
+        buttonSummaryDelete();
         createViewPage();
     }
 
-    private void buttonSummary() {
+    private void buttonSummaryDelete() {
         summary = findViewById(R.id.AM_Buton_Summary);
         summary.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +38,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(myIntent);
             }
         });
+        delete = findViewById(R.id.AM_Buton_Delete);
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AppDB.getIns(MainActivity.this).daoNaber().deleteAll();
+                createViewPage();
+            }
+        });
+
     }
 
     private void createViewPage() {

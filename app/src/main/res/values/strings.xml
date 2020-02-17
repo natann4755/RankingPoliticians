@@ -10,4 +10,5 @@
     <string name="samery_tv_t_favorit">Favorites</string>
     <string name="samery_tv_t_ring">Rating</string>
     <string name="samery_tv_t_you_mast">You must vote</string>
+    <string name="AM_Buton_delet_text">delete</string>
 </resources>
