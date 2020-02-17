@@ -2,6 +2,7 @@ package com.example.mynabers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -17,8 +19,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.mynabers.ollNeighbors.MY_NEIGHBORS;
-import static com.example.mynabers.ollNeighbors.keySharedPreferences;
+
 
 public class Activity1Naeber extends AppCompatActivity implements View.OnClickListener {
 
@@ -39,7 +40,8 @@ public class Activity1Naeber extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity1_naeber);
-        getArreyDB();
+
+        myNeighbors = (ArrayList<neighbor>) AppDB.getIns(this).daoNaber().getAll();
 
         Intent intent = getIntent();
         myNeighbor1 = intent.getParcelableExtra("naiber");
@@ -47,15 +49,7 @@ public class Activity1Naeber extends AppCompatActivity implements View.OnClickLi
 
     }
 
-    private void getArreyDB() {
 
-        my
-
-        settings = getApplicationContext().getSharedPreferences(keySharedPreferences, 0);
-        String fromSharedPreferences = settings.getString(MY_NEIGHBORS, null);
-        myNeighbors = gson.fromJson(fromSharedPreferences,new TypeToken<List<neighbor>>(){}.getType());
-
-    }
 
     private void intVeiws() {
         myImageView = findViewById(R.id.activity2_imeg_v);
@@ -114,25 +108,25 @@ public class Activity1Naeber extends AppCompatActivity implements View.OnClickLi
         }
         if (v.getId()==R.id.activity2_lass_Rating) {
             int Rating = myNeighbors.get(posishnMyNaiber).getRating();
-            myNeighbors.get(posishnMyNaiber).setRating(--Rating);
+            if (Rating >0) {
+                myNeighbors.get(posishnMyNaiber).setRating(--Rating);
+            }else {
+                Toast.makeText(this, "The rating is 0 - the minimum value ",
+                        Toast.LENGTH_LONG).show();
+                return;
+            }
         }
         myNeighbor1 = myNeighbors.get(posishnMyNaiber);
         intVeiws();
 
-//        SharedPreferences.Editor edt = settings.edit();
-//        String json = gson.toJson(myNeighbors);
-//        edt.putString(MY_NEIGHBORS, json);
-//        edt.apply();
     }
 
 
     @Override
     protected void onPause() {
         super.onPause();
-        SharedPreferences.Editor edt = settings.edit();
-        String json = gson.toJson(myNeighbors);
-        edt.putString(MY_NEIGHBORS, json);
-        edt.apply();
+        AppDB.getIns(this).daoNaber().deleteAll();
+        AppDB.getIns(this).daoNaber().insertAll(myNeighbors);
     }
 
 }

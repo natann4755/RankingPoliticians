@@ -6,13 +6,17 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Dao
 public interface daoNaber {
 
-    @Query("SELECT * FROM neighbor")
-    ArrayList<neighbor> getAll();
+    @Query("SELECT * FROM neighbor ORDER BY rating ASC ")
+    List<neighbor> getAll();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertAll(ArrayList<neighbor> myArrey);
+    void insertAll(List<neighbor> myArrey);
+
+    @Query("DELETE FROM neighbor")
+    void deleteAll();
 }

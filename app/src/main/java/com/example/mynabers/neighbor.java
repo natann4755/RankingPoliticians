@@ -3,11 +3,16 @@ package com.example.mynabers;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 @Entity
 public class neighbor implements Parcelable{
-    private String firstName, lastName, url;
+    @NonNull
+    @PrimaryKey
+    private String lastName;
+    private String firstName, url;
     private int age;
     private int rating;
     private boolean faivorit = false;

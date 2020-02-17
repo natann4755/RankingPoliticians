@@ -29,7 +29,7 @@ public class ollNeighbors extends Fragment {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     static final String keybundel = "keybundel";
-    private ArrayList<neighbor> myNeighbors;
+    private ArrayList<neighbor> myNeighbors = new ArrayList<>();
     private  View vieww;
 
 
@@ -48,9 +48,6 @@ public class ollNeighbors extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
          vieww = inflater.inflate(R.layout.fragment,container,false);
-//        setArreyNeighbors();
-//        setFaevorit();
-//        findArae(vieww);
         return vieww;
     }
 
@@ -67,7 +64,6 @@ public class ollNeighbors extends Fragment {
 
         if (myNeighbors.size() == 0){
             myNeighbors = arreyNeighbor();
-
             AppDB.getIns(getActivity()).daoNaber().insertAll(myNeighbors);
             Log.e("eeee","come");
         }
