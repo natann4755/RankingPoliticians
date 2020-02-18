@@ -50,7 +50,9 @@ public class Summary extends AppCompatActivity {
                     sRating += myNeighbors.get(i).getRating() + "\n";
                 }
             }
-
+            if (sRating.equals("")){
+                return;
+            }
             favorites.setText(sFavorites);
             nameRating.setText(sRatingName);
             rating.setText(sRating);
