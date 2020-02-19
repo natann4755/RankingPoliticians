@@ -50,16 +50,14 @@ public class Summary extends AppCompatActivity {
                     sRating += myNeighbors.get(i).getRating() + "\n";
                 }
             }
-            if (sRating.equals("")){
-                return;
-            }
             favorites.setText(sFavorites);
             nameRating.setText(sRatingName);
             rating.setText(sRating);
+            if (myNeighbors.get(0).getRating()==0||myNeighbors.get(0).getRating()==myNeighbors.get(1).getRating()){
+                return;
+            }
             volt.setText(sVolt);
-
         }
-
     }
 }
 

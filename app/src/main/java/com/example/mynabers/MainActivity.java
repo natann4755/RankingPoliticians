@@ -20,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
     private Button summary;
     private Button delete;
 
+    private ollNeighbors fals = ollNeighbors.newInstansOllNeighbors(false);
+    private ollNeighbors tru = ollNeighbors.newInstansOllNeighbors(true);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,10 +46,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AppDB.getIns(MainActivity.this).daoNaber().deleteAll();
+                fals.setData();
+                tru.setData();
+
                 createViewPage();
             }
         });
-
     }
 
     private void createViewPage() {
@@ -58,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<ollNeighbors> makeFragments() {
         ArrayList<ollNeighbors> arrayFragment = new ArrayList<ollNeighbors>();
-        arrayFragment.add(ollNeighbors.newInstansOllNeighbors(false));
-        arrayFragment.add(ollNeighbors.newInstansOllNeighbors(true));
+        arrayFragment.add(fals);
+        arrayFragment.add(tru);
         return arrayFragment;
     }
 }

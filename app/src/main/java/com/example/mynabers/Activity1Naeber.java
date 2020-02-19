@@ -62,6 +62,16 @@ public class Activity1Naeber extends AppCompatActivity implements View.OnClickLi
         addRating = findViewById(R.id.activity2_add_Rating);
         lasRating = findViewById(R.id.activity2_lass_Rating);
 
+       inishen();
+
+        addToFaivorit.setOnClickListener(this);
+        removeFaivorit.setOnClickListener(this);
+        addRating.setOnClickListener(this);
+        lasRating.setOnClickListener(this);
+
+    }
+
+    private void inishen() {
         String url = myNeighbor1.getUrl();
         Picasso.get().load(url).into(myImageView);
         firstName.setText(myNeighbor1.getFirstName());
@@ -70,11 +80,6 @@ public class Activity1Naeber extends AppCompatActivity implements View.OnClickLi
         rating.setText(String.valueOf(myNeighbor1.getRating()));
 
 
-        addToFaivorit.setOnClickListener(this);
-        removeFaivorit.setOnClickListener(this);
-        addRating.setOnClickListener(this);
-        lasRating.setOnClickListener(this);
-
         if (myNeighbor1.isFaivorit()){
             addToFaivorit.setVisibility(View.GONE);
             removeFaivorit.setVisibility(View.VISIBLE);
@@ -82,7 +87,6 @@ public class Activity1Naeber extends AppCompatActivity implements View.OnClickLi
             removeFaivorit.setVisibility(View.GONE);
             addToFaivorit.setVisibility(View.VISIBLE);
         }
-
     }
 
     @Override
@@ -117,7 +121,7 @@ public class Activity1Naeber extends AppCompatActivity implements View.OnClickLi
             }
         }
         myNeighbor1 = myNeighbors.get(posishnMyNaiber);
-        intVeiws();
+        inishen();
 
     }
 

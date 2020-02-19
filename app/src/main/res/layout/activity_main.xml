@@ -33,6 +33,7 @@
             android:text="@string/AM_Buton_delet_text"
             android:textColor="@color/button_Dezin_text_color"
             android:textSize="@dimen/button_Dezin_text_siz"
+            android:layout_marginStart="10dp"
            />
 
     </LinearLayout>
