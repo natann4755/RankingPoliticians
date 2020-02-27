@@ -153,5 +153,11 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.Holder
                     notifyDataSetChanged();
             }
         }
+        public void SetData(ArrayList<neighbor>arrey){
+            myfilterNeighbors.clear();
+            myfilterNeighbors.addAll(arrey);
+            notifyDataSetChanged();
+
+        }
     }
 //}

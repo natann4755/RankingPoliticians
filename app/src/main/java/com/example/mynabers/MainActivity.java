@@ -48,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AppDB.getIns(MainActivity.this).daoNaber().deleteAll();
-//                fals.setData();
-//                tru.setData();
-                createViewPage();
+                fals.setData();
+                tru.setData();
+//                createViewPage();
             }
         });
 

@@ -107,9 +107,10 @@ public class ollNeighbors extends Fragment {
         return mAdapter;
     }
 
-//    public void setData(){
-//        myNeighbors.clear();
-//        myNeighbors.addAll(arreyNeighbor());
-//        mAdapter.notifyDataSetChanged();
-//    }
+    public void setData(){
+        myNeighbors =  arreyNeighbor();
+        setFaevorit();
+        mAdapter.SetData(myNeighbors);
+
+    }
 }
