@@ -12,6 +12,8 @@ import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -27,15 +29,18 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 import static android.app.PendingIntent.getActivity;
 
-public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.Holder> {
+public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.Holder> implements Filterable {
 
     public static final String key = "key";
     private ArrayList<neighbor> mNeighbors;
+    private ArrayList<neighbor> myfilterNeighbors = new ArrayList<>();
+    private MyFilter myFilter = new MyFilter();
     public Context context;
 
 
     public recyclerAdapter(ArrayList<neighbor> mNeighbors,Context context) {
         this.mNeighbors = mNeighbors;
+        myfilterNeighbors.addAll(mNeighbors);
         this.context = context;
     }
 
@@ -48,12 +53,17 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.Holder
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
-        holder.set(mNeighbors.get(position));
+        holder.set(myfilterNeighbors.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return mNeighbors.size();
+        return myfilterNeighbors.size();
+    }
+
+    @Override
+    public Filter getFilter() {
+        return myFilter;
     }
 
 
@@ -116,6 +126,32 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.Holder
             Thread t = new Thread(r);
             t.start();
         }
+        }
+        public class MyFilter extends Filter{
+
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                FilterResults mFilterResults = new FilterResults();
+                ArrayList<neighbor> arreyNeighbors = new ArrayList<>();
+                myfilterNeighbors.clear();
+                for (neighbor n:mNeighbors) {
+                    String name = n.getFirstName()+n.getLastName();
+                    if (name.toLowerCase().contains(constraint.toString().toLowerCase())){
+                        arreyNeighbors.add(n);
+                    }
+                }
+                mFilterResults.values = arreyNeighbors;
+                mFilterResults.count = arreyNeighbors.size();
+
+
+                return mFilterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                    myfilterNeighbors = (ArrayList<neighbor>) results.values;
+                    notifyDataSetChanged();
+            }
         }
     }
 //}

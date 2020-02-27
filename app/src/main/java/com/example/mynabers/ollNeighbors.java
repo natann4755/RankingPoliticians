@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,7 +27,7 @@ public class ollNeighbors extends Fragment {
 
 
     private RecyclerView myRecyclerView;
-    private RecyclerView.Adapter mAdapter;
+    private recyclerAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     static final String keybundel = "keybundel";
     private ArrayList<neighbor> myNeighbors = new ArrayList<>();
@@ -102,9 +103,13 @@ public class ollNeighbors extends Fragment {
         return arreyNeighbors;
     }
 
-    public void setData(){
-        myNeighbors.clear();
-        myNeighbors.addAll(arreyNeighbor());
-        mAdapter.notifyDataSetChanged();
+    public recyclerAdapter getAdapter(){
+        return mAdapter;
     }
+
+//    public void setData(){
+//        myNeighbors.clear();
+//        myNeighbors.addAll(arreyNeighbor());
+//        mAdapter.notifyDataSetChanged();
+//    }
 }

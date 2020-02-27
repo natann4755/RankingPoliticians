@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.SearchView;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager myViewPager;
     private Button summary;
     private Button delete;
+    private SearchView mSearchView;
 
     private ollNeighbors fals = ollNeighbors.newInstansOllNeighbors(false);
     private ollNeighbors tru = ollNeighbors.newInstansOllNeighbors(true);
@@ -46,12 +48,27 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AppDB.getIns(MainActivity.this).daoNaber().deleteAll();
-                fals.setData();
-                tru.setData();
-
+//                fals.setData();
+//                tru.setData();
                 createViewPage();
             }
         });
+
+        mSearchView = findViewById(R.id.AM_SearchView);
+        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                tru.getAdapter().getFilter().filter(newText);
+                fals.getAdapter().getFilter().filter(newText);
+                return true;
+            }
+        });
+
     }
 
     private void createViewPage() {
