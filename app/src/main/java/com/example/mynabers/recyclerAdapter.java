@@ -133,7 +133,7 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.Holder
             protected FilterResults performFiltering(CharSequence constraint) {
                 FilterResults mFilterResults = new FilterResults();
                 ArrayList<neighbor> arreyNeighbors = new ArrayList<>();
-                myfilterNeighbors.clear();
+//                myfilterNeighbors.clear();
                 for (neighbor n:mNeighbors) {
                     String name = n.getFirstName()+n.getLastName();
                     if (name.toLowerCase().contains(constraint.toString().toLowerCase())){
