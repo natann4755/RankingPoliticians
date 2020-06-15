@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">VOLT</string>
+    <string name="app_name">Ranking of politicians</string>
     <string name="AM_Buton_text">Summary</string>
     <string name="activ_1naber_fn">first_name</string>
     <string name="activ_1naber_ln">last_name</string>
